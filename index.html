@@ -22,10 +22,20 @@
 
                 <div class="players">
                     <div class="player p1">Player 1</div>
-                    <div class="counter">Counter 1</div>
+                    <div class="counter">
+                        <div>
+                            <input class="timer" id="counter1" name="time" value="0" />
+                            <h1>seconds</h1>
+                        </div>
+                    </div>
                     <div class="spot blue"></div>
                     <div class="player p2">Player 2</div>
-                    <div class="counter">Counter 2</div>
+                    <div class="counter">
+                        <div>
+                            <input class="timer" id="counter2" name="time" value="0" />
+                            <h1>seconds</h1>
+                        </div>
+                    </div>
                     <div class="spot red"></div>
                 </div>
 
@@ -33,21 +43,21 @@
             <div class="footer">
 
                 <div class="contactform">
-                    <h1>FORMULARIO DE CONTACTO</h1>
+                    <h1>CONTACT FORM</h1>
                     <form name="form1">
-                        <label for="name">Nombre</label> <br>
+                        <label for="name">NAME</label> <br>
                         <input id="name" type="text" name="name" placeholder="ingrese nombre">
                         <p id="nameError" class="error"></p>
-                        <label for="lastname">Apellido</label> <br>
+                        <label for="lastname">LAST NAME</label> <br>
                         <input id="lastname" type="text" name="lastname" placeholder="ingrese apellido">
                         <p id="lastnameError" class="error"></p>
-                        <label for="email">Email</label> <br>
+                        <label for="email">EMAIL</label> <br>
                         <input id="email" type="email" name="email" placeholder="ingrese email">
                         <p id="emailError" class="error"></p>
-                        <label for="comments">Comentarios</label> <br>
+                        <label for="comments">COMMENT</label> <br>
                         <input id="comments" type="text" name="comments">
                         <p id="commentsError" class="error"></p>
-                        <button type="submit" id="send">Enviar</button>
+                        <button type="submit" id="send">Send</button>
                     </form>
                 </div>
 

@@ -4,6 +4,24 @@ var boardHTML = null
 var columnsHTML = null
 var turn = 1
 
+var name1 = null
+var nameError = null
+var lastname = null
+var lastnameError = null
+var email = null
+var emailError = null
+var comments = null
+var commentsError = null
+var sendBtn = null
+
+var cronos1 = null
+var time1 = null
+
+var cronos2 = null
+var time2 = null
+
+
+
 var corchete = []
 
 var board = [
@@ -15,6 +33,91 @@ var board = [
     [null, null, null, null, null, null],
     [null, null, null, null, null, null]
 ]
+
+//   TIMER 1
+
+function initialize1() {
+    cronos1 = setInterval(function () { timer1() }, 1000);
+}
+
+function timer1() {
+    time1 = parseInt(document.getElementById('counter1').value);
+    document.getElementById('counter1').value = eval(time1 + 1);
+}
+
+function reset1() {
+    time1 = parseInt(document.getElementById('counter1').value);
+    document.getElementById('counter1').value = "0";
+}
+
+function stop1() {
+    clearInterval(cronos1);
+}
+
+//   TIMER 2
+
+function initialize2() {
+    cronos2 = setInterval(function () { timer2() }, 1000);
+}
+
+function timer2() {
+    time2 = parseInt(document.getElementById('counter2').value);
+    document.getElementById('counter2').value = eval(time2 + 1);
+}
+
+function reset2() {
+    time2 = parseInt(document.getElementById('counter2').value);
+    document.getElementById('counter2').value = "0";
+}
+
+function stop2() {
+    clearInterval(cronos2);
+}
+
+
+
+var sendForm = function (evt) {
+    evt.preventDefault()
+    if (name1.value.length < 3) {
+        nameError.innerHTML = 'El nombre debe tener al menos 3 caracteres'
+        console.log(name1.value)
+    } else {
+        nameError.innerHTML = ''
+        console.log(name1.value)
+    }
+
+    if (lastname.value.length < 3) {
+        lastnameError.innerHTML = 'El apellido debe tener al menos 3 caracteres'
+        console.log(lastname.value)
+    } else {
+        lastnameError.innerHTML = ''
+        console.log(lastname.value)
+    }
+
+    if (validateEmail(email.value) == false) {
+        emailError.innerHTML = 'Email inválido'
+        console.log(email.value)
+    } else {
+        emailError.innerHTML = ''
+        console.log(email.value)
+    }
+
+    if (comments.value.length < 3) {
+        commentsError.innerHTML = 'Ingrese comentario'
+        console.log(comments.value)
+    } else {
+        commentsError.innerHTML = ''
+        console.log(comments.value)
+    }
+
+    return false
+}
+
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
 
 var CheckWinners = function (turnrecived) {
 
@@ -63,7 +166,16 @@ var CheckWinners = function (turnrecived) {
 var ChangeTurn = function () {
     turn = (turn === 'blue') ? 'red' : 'blue'
     CheckWinners(turn)
+    if (turn == 'blue') {
+        initialize1()
+        stop2()
+    }
+    else {
+        initialize2()
+        stop1()
+    }
 }
+
 
 var columnEventHandler = function (evt) {
     var columnId = evt.target.id.substr(1, 1)
@@ -102,9 +214,29 @@ var render = function () {
 
 
 var init = function () {
+
     boardHTML = document.getElementById('board')
     turn = Math.random() > 0.5 ? 'blue' : 'red'
     render()
+
+    name1 = document.getElementById('name')
+
+    lastname = document.getElementById('lastname')
+
+    email = document.getElementById('email')
+
+    comments = document.getElementById('comments')
+
+    sendBtn = document.getElementById('send')
+    sendBtn.onclick = sendForm
+
+    nameError = document.getElementById('nameError')
+
+    lastnameError = document.getElementById('lastnameError')
+
+    emailError = document.getElementById('emailError')
+
+    commentsError = document.getElementById('commentsError')
 }
 
 window.onload = init
