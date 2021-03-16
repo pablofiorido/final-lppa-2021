@@ -134,12 +134,18 @@ var CheckWinners = function (turnrecived) {
                     && board[i][j] == board[i + 3][j + 3]) {
                     console.log('game ended')
                     var turn = turnrecived
-                    if (turn == 'blue')
+                    if (turn == 'blue') {
                         alert('game ended. winner: player 2')
-                    else
+                        stop1()
+                        stop2()
+                    } else {
                         alert('game ended. winner: player 1')
+                        stop1()
+                        stop2()
+                    }
                 }
             }
+
             // if (board[i][j] != null && board[i][j] == board[6][j]) {
             //console.log("entra al check 6 j")
             //if (board[i][j] == board[i][j + 1] && board[i][j] == board[i][j + 2]
