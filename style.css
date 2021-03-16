@@ -1,0 +1,125 @@
+body {
+    font-family: "open sans", sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100vw;
+    background: transparent url('./assets/fondo-juego.jpg') repeat center center;
+}
+
+.header {
+    text-align: center;
+    padding: 14px 9px;
+    color: rgb(0, 170, 9);
+}
+
+
+.gametitlebackground{
+background-color: green;
+margin-bottom: 10px;
+}
+
+.gametitle{
+color: #4ad060;
+font-size: xx-large;
+padding: 15px;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color:rgb(151, 248, 151);
+}
+
+.game .board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4ad060;
+    padding: 0 20px;
+
+}
+
+.game .board .column {
+    padding: 5px;
+    background-color: #39a76a;
+}
+
+/*
+
+.game .board .column:hover {
+    background-color: rgba(255, 255, 255, .25);
+}
+
+*/
+
+.game .board .column .spot {
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.game .board .column .spot.red {
+    background-color: #EE6E52;
+}
+
+.game .board .column .spot.blue {
+    background-color: #455ff5;
+}
+
+
+.game .players {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.game .players .counter{
+
+color: rgb(255, 255, 0);
+}
+
+.game .players .spot {
+    width: 33px;
+    height: 33px;
+    margin: 40px 5px;
+}
+
+.game .players .spot.red {
+    background-color: #EE6E52;
+}
+
+.game .players .spot.blue {
+    background-color: #0026ff;
+}
+
+
+.game .players .player {
+    flex: 2;
+}
+
+.game .players .player.p2 {
+    text-align: right;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 5px;
+}
+
+
+.contactform {
+background-color: #4ad060;
+border-radius: 10px;
+padding: 15px;
+}
