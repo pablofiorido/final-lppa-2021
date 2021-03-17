@@ -68,7 +68,7 @@ padding: 15px;
 }
 
 .game .board .column .spot.red {
-    background-color: #EE6E52;
+    background-color: #f74f29;
 }
 
 .game .board .column .spot.blue {
@@ -94,13 +94,13 @@ background-color: transparent;
 }
 
 .game .players .spot {
-    width: 33px;
-    height: 33px;
+    width: 40px;
+    height: 40px;
     margin: 40px 5px;
 }
 
 .game .players .spot.red {
-    background-color: #EE6E52;
+    background-color: #f74f29;
 }
 
 .game .players .spot.blue {
@@ -127,4 +127,5 @@ background-color: transparent;
 background-color: #4ad060;
 border-radius: 10px;
 padding: 15px;
+font-size: small;
 }

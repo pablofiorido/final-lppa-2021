@@ -1,4 +1,3 @@
-console.log("hi")
 
 var boardHTML = null
 var columnsHTML = null
@@ -19,8 +18,6 @@ var time1 = null
 
 var cronos2 = null
 var time2 = null
-
-
 
 var corchete = []
 
@@ -110,7 +107,10 @@ var sendForm = function (evt) {
         console.log(comments.value)
     }
 
+    window.open("http://www.outlook.com", "email", "width=300,height=300,scrollbars=NO")
+
     return false
+
 }
 
 function validateEmail(email) {
@@ -121,7 +121,6 @@ function validateEmail(email) {
 
 var CheckWinners = function (turnrecived) {
 
-    console.log("entra al check")
     console.log(board)
     console.log(board.length)
     for (var i = 0; i < board.length; i++) {
@@ -135,13 +134,13 @@ var CheckWinners = function (turnrecived) {
                     console.log('game ended')
                     var turn = turnrecived
                     if (turn == 'blue') {
-                        alert('game ended. winner: player 2')
                         stop1()
                         stop2()
+                        alert('player 2 wins')
                     } else {
-                        alert('game ended. winner: player 1')
                         stop1()
                         stop2()
+                        alert('player 1 wins')
                     }
                 }
             }
